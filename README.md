@@ -40,3 +40,66 @@ Built an end-to-end LLM-powered system that:
   * Match score
   * Final verdict
   * Reasoning
+
+
+# 📚 Week 2 & 3 – Advanced LLM Engineering
+
+This phase focuses on building **production-ready AI systems** beyond basic prompts.
+
+## 🚀 What I Built
+
+* **Prompt Engineering Apps**
+
+  * Email Classifier
+  * Article Summarizer
+  * Sentiment Analyzer
+
+* **ReAct AI Agent (from scratch)**
+
+  * Thought → Action → Observation loop
+  * Tool usage (calculator, lookup)
+  * Multi-step reasoning
+
+* **Prompt Chaining Pipelines**
+
+  * Breaking complex tasks into smaller LLM calls
+  * Conditional routing
+
+* **Streaming CLI Chatbot**
+
+  * Real-time responses (streaming)
+  * Conversation memory
+  * Token tracking
+
+* **RAG + Semantic Search (from scratch)**
+
+  * Built a mini RAG pipeline in Python
+  * Implemented embeddings + cosine similarity
+  * Created a simple semantic search engine
+  * Retrieved relevant context and passed to LLM
+
+---
+
+## 🧠 Key Concepts Learned
+
+* Production prompt design (6-part structure)
+* ReAct (Reasoning + Acting)
+* Prompt chaining for scalable systems
+* Streaming + TTFT optimization
+* **RAG (Retrieval-Augmented Generation)**
+* **Embeddings & semantic search**
+
+---
+
+## 🤖 AI Portfolio (Backend Ready)
+
+Built the backend for a **personal AI chatbot** that:
+
+* Answers recruiter questions using my resume
+* Maintains a professional tone
+
+⚠️ Frontend is **not built yet** — backend is ready.
+
+
+
+
