@@ -47,10 +47,10 @@ Since I don’t have a GPU, the **audio-to-text pipeline (yt-dlp + Whisper)** wa
 
 
 
-![Result 1](./assets/output1.jpeg)
-![Result 2](./assets/output2.jpeg)
-![Result 3](./assets/output3.jpeg)
-![Result 4](./assets/output4.jpeg)
+![Result 1](./assets/output4.jpeg)
+![Result 2](./assets/output3.jpeg)
+![Result 3](./assets/output2.jpeg)
+![Result 4](./assets/output1.jpeg)
 
 
 
