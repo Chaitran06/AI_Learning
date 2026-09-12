@@ -100,6 +100,56 @@ Built the backend for a **personal AI chatbot** that:
 
 ⚠️ Frontend is **not built yet** — backend is ready.
 
+# 📚 Vector Databases with Qdrant
+
+This phase focuses on scaling semantic search from small demos to **production-ready systems using vector databases**.
+
+## 🚀 What I Built
+
+* **Qdrant Cloud Integration (Python)**
+
+  * Created collections with correct vector size & distance metric
+  * Uploaded embeddings from previous work
+  * Performed top-K similarity search
+
+* **Production-Ready Vector Search**
+
+  * Persistent, scalable alternative to in-memory search
+  * Handles large datasets efficiently
+
+* **Advanced Qdrant Features**
+
+  * Rich metadata payloads (tags, audience, status, dates)
+  * Filtering with:
+
+    * `must` (AND)
+    * `should` (OR)
+    * `must_not` (NOT)
+  * Multi-tenant data isolation (SaaS-style)
+  * CRUD operations (update, delete, upsert, count)
+
+---
+
+## 🧠 Key Concepts Learned
+
+* Why vector databases are essential for RAG systems
+* Scaling from 100 → millions of documents
+* Cosine similarity vs other distance metrics
+* Metadata filtering in real-world queries
+* Managed vs self-hosted vector databases
+
+---
+
+## 📌 Outcome
+
+Built a **cloud-hosted semantic search system** with Qdrant that:
+
+* Scales to millions of vectors
+* Supports real production use-cases
+* Mimics how modern AI apps (search, RAG, recommendations) work
+
+---
+
 
 
 
