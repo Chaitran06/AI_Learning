@@ -1,3 +1,5 @@
+
+
 # Week 1 – LLM Fundamentals & API Mastery 🚀
 
 ---
@@ -150,6 +152,43 @@ Built a **cloud-hosted semantic search system** with Qdrant that:
 
 ---
 
+## 🎥 YouTube Playlist RAG (DSA Assistant) (Project)
+
+Built a system that lets users ask questions in **English or Hinglish** and get:
+
+* ✅ Clear answers
+* 🎯 **Clickable YouTube timestamps (jump to exact second)**
+
+👉 Full implementation:
+https://github.com/Chaitran06/AI_Learning/tree/main/week3/ytscrapper
+
+---
+
+### ⚙️ How It Works (Brief)
+
+* Extract videos using `yt-dlp`
+* Convert audio → text (Whisper)
+* Chunk transcripts (~75s)
+* Generate embeddings (MiniLM)
+* Store in **Qdrant vector DB**
+* Retrieve top-K results → pass to LLM
+
+---
+
+### 🖼️ Demo
+
+<img src="https://raw.githubusercontent.com/Chaitran06/AI_Learning/main/week3/ytscrapper/assets/output4.jpeg" width="400"/>
+
+<img src="https://raw.githubusercontent.com/Chaitran06/AI_Learning/main/week3/ytscrapper/assets/output3.jpeg" width="400"/>
+
+---
+
+### 📌 Note
+
+Audio transcription pipeline was adapted from Pratyush Sir’s implementation due to GPU constraints.
+Focus of this project is on **RAG pipeline, retrieval, and answering system**.
+
+---
 
 
 
