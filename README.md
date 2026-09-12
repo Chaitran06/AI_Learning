@@ -1,6 +1,6 @@
+# AI Engineering Journey – From Prompts to Production Systems
 
-
-# Week 1 – LLM Fundamentals & API Mastery 🚀
+## Week 1 – LLM Fundamentals & API Mastery 🚀
 
 ---
 
