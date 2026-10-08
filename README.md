@@ -190,5 +190,37 @@ Focus of this project is on **RAG pipeline, retrieval, and answering system**.
 
 ---
 
+# 📚 Week 4 – Advanced RAG & AI Agents
+
+This week focused on improving RAG systems and understanding how AI agents use tools to solve multi-step tasks.
+
+## 🚀 What I Learned & Built
+
+- **RAG Chunking**
+  - Fixed-size, paragraph, recursive, and Markdown-aware chunking
+  - Chunk size and overlap tuning
+  - Choosing chunking strategies based on content type
+
+- **RAG Evaluation**
+  - Created a **Golden Dataset** with questions and ground-truth answers
+  - Evaluated RAG layer-by-layer:
+    - Context Retrieval
+    - Precision & Recall
+    - Faithfulness
+    - Correctness
+    - Relevance
+
+- **AI Agents**
+  - Built an AI agent using an LLM with external tools
+  - Tool calling with **Web Search + Calculator**
+  - Automatic tool selection based on the query
+  - Multi-step tool execution with iteration limits
+  - Understanding the foundation behind agent frameworks like LangGraph
+
+## 🧠 Key Takeaway
+
+Learned how to move from a basic RAG pipeline toward **evaluated, reliable, and tool-using AI systems**.
+
+> 🎯 Focus: **Better Retrieval → Better Evaluation → Intelligent Agents**
 
 
