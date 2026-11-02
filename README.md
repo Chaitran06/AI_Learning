@@ -93,14 +93,15 @@ This phase focuses on building **production-ready AI systems** beyond basic prom
 
 ---
 
-## 🤖 AI Portfolio (Backend Ready)
+## 🤖 AI Portfolio
 
 Built the backend for a **personal AI chatbot** that:
 
 * Answers recruiter questions using my resume
 * Maintains a professional tone
 
-⚠️ Frontend is **not built yet** — backend is ready.
+https://chaitran-portfolio.vercel.app/ 
+Check my portfolio 👆🏼
 
 # 📚 Vector Databases with Qdrant
 
@@ -222,5 +223,38 @@ This week focused on improving RAG systems and understanding how AI agents use t
 Learned how to move from a basic RAG pipeline toward **evaluated, reliable, and tool-using AI systems**.
 
 > 🎯 Focus: **Better Retrieval → Better Evaluation → Intelligent Agents**
+
+# 📅 Week 5 – Agentic Workflows with LangGraph
+
+## Day 19 – LangGraph Fundamentals 🧩
+
+- **State** – A shared `TypedDict` passed between all nodes.
+- **Nodes** – Python functions that read the state and return updates.
+- **Edges / Conditional Edges** – Fixed transitions, or a router that picks the next node based on the state.
+- **Loops** – Nodes can route back to themselves, e.g. doubling a number until it crosses 100.
+
+## Day 20 – Restaurant Order Management System 🍽️
+
+An LLM-powered ordering agent built with **LangGraph + Groq (gpt-oss-120b)**.
+
+- **Order extraction**: the LLM pulls the dish and quantity out of plain-English input and rejects requests that aren't food orders.
+- **Inventory check**: each order is classified as fully, partially or not available; the user can accept a partial order or reorder.
+- **Cook & serve**: each has a 60% chance of success, with retries on failure.
+- **Retry limits in state**: order (3), cook (2), serve (2). The graph either retries or ends with an LLM-written apology.
+
+```
+take_order → order_confirm → cook → serve → complete
+     ↑______________|          ↑______|  (retries)
+                         apology / END when retries run out
+```
+
+### 🧪 Test Results
+| Test | Scenario | Result |
+|---|---|---|
+| TC1 | Unrelated → partial rejected → unavailable dish → ends when order attempts run out | ✅ PASS |
+| TC2 | Cook fails → retry → serve fails → re-cook → serve succeeds → order completed | ✅ PASS |
+| TC3 | Cook fails → retry → serve fails twice → cook retries used up → order fails | ✅ PASS |
+
+**Key learning:** LangGraph is a state machine. Keep business rules (inventory, retries) in code and leave language tasks to the LLM.
 
 
