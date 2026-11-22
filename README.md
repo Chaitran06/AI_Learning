@@ -257,4 +257,38 @@ take_order → order_confirm → cook → serve → complete
 
 **Key learning:** LangGraph is a state machine. Keep business rules (inventory, retries) in code and leave language tasks to the LLM.
 
+## Multi-Agent System (without LangGraph) 🤝
+
+I built the same research assistant twice to compare a single agent with a multi-agent setup. Both use **Groq (gpt-oss-120b)**, **Tavily web search** and a **safe AST calculator**, with a limit of 5 attempts.
+
+- **Single agent**: one LLM has both tools and decides which ones to call and how often.
+- **Multi agent**: three LLM roles, each set by its own system prompt:
+  - **Manager**: only delegates work. It keeps no chat history; its memory is a `manager_notes.md` file holding every helper's reply.
+  - **ask_search_llm**: can only use web search.
+  - **ask_math_llm**: can only use the calculator.
+- **Token tracking**: usage is counted per agent so the two systems can be compared on one complex query that mixes search and math.
+
+**Key learning:** splitting work across agents keeps each role focused, but every extra LLM call adds tokens. Multi-agent only pays off when the task really needs specialised roles.
+
+---
+
+# 📅 Week 6 – Coding Agents & MCP
+
+## 🛠️ Coding Agent (Bug Fixer)
+
+A CLI agent that fixes simple bugs in a C++ file. You describe the bug in plain English and the agent fixes it.
+
+- **Tools**: `search_files` (finds related files) → `search_in_file` (finds the matching line numbers) → `replace_line` (edits one line)
+- **Verification**: after each attempt the agent checks that it edited something and that the C++ file still compiles with `g++`.
+- **Retries**: up to 3 attempts, then it prints `Cannot solve the bug`.
+- Every tool call is printed, so the whole flow is visible. Built as a plain Python loop with no LangGraph.
+
+## 🔌 My First MCP Server
+
+I built a custom **MCP server** (`Chaitran_MCP_Calculator`) in Python and connected it to Claude.
+
+- Exposes a `chaitran_add` tool through the `@mcp.tool()` decorator.
+- The tool deliberately adds `+100` to every result. This proves Claude is calling my tool and not doing the maths itself.
+
+**Key learning:** MCP is a standard way to plug your own tools into any LLM client. A coding agent is just an LLM loop with file tools plus a check that the fix worked.
 
